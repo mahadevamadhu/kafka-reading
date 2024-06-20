@@ -48,13 +48,13 @@ Copy code
 Description: Configures the consumer to start reading from the end of the log if the group does not have a committed offset (default behavior when not specifying --from-beginning or --offset).
 
 # How to prevent duplication in Kafka?
-Enable Idempotent Producers: Use Kafka’s idempotent producer feature for exactly-once delivery semantics.
-Transactional Producers: Use Kafka’s transactional API for atomic message writes across multiple topics or partitions.
-Kafka Streams EOS: Use exactly-once processing in Kafka Streams applications.
-Consumer-Level Deduplication: Implement deduplication logic in your consumer application.
-Log Compaction: Use Kafka’s log compaction to retain only the latest message for each key.
-Unique Message Identifiers: Attach unique IDs to messages and use them for deduplication.
-Consumer Group Offsets: Manage consumer group offsets properly to avoid reprocessing messages.
+1. Enable Idempotent Producers: Use Kafka’s idempotent producer feature for exactly-once delivery semantics.
+2. Transactional Producers: Use Kafka’s transactional API for atomic message writes across multiple topics or partitions.
+3. Kafka Streams EOS: Use exactly-once processing in Kafka Streams applications.
+4. Consumer-Level Deduplication: Implement deduplication logic in your consumer application.
+5. Log Compaction: Use Kafka’s log compaction to retain only the latest message for each key.
+6. Unique Message Identifiers: Attach unique IDs to messages and use them for deduplication.
+7. Consumer Group Offsets: Manage consumer group offsets properly to avoid reprocessing messages.
 
 
 
