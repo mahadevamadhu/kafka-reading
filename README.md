@@ -166,102 +166,103 @@ Offset Management: Each consumer group maintains its own set of offsets for each
 Basic Kafka Broker Configurations
 broker.id
 
-Description: Unique identifier for each broker in the cluster.
+1.Description: Unique identifier for each broker in the cluster.
 Default: None (must be set)
 Example: broker.id=1
+------------------------
 listeners
-
 Description: List of listeners and the host
 to bind to.
 Default: None (must be set)
 Example: listeners=PLAINTEXT://localhost:9092
+------------------------
 log.dirs
-
 Description: Comma-separated list of directories under which to store log files.
 Default: /tmp/kafka-logs
 Example: log.dirs=/var/lib/kafka/logs
+-----------------------------
 zookeeper.connect
-
 Description: Zookeeper connection string in the form hostname
 where Zookeeper is running.
 Default: None (must be set)
 Example: zookeeper.connect=localhost:2181
-Performance Tuning Configurations
+-------------------
+## Performance Tuning Configurations
 num.network.threads
-
 Description: Number of threads handling network requests.
 Default: 3
 Example: num.network.threads=3
+---------------------
 num.io.threads
-
 Description: Number of threads doing disk I/O.
 Default: 8
 Example: num.io.threads=8
+-----------------
 num.partitions
-
 Description: Default number of log partitions per topic.
 Default: 1
 Example: num.partitions=3
+--------------------
 log.segment.bytes
-
 Description: The maximum size of a single log segment file before it is rolled to the next segment.
 Default: 1 GB
 Example: log.segment.bytes=1073741824
+-------------------
 log.retention.hours
-
 Description: The number of hours to keep a log file before deleting it.
 Default: 168 (7 days)
 Example: log.retention.hours=168
+-------------------------
 Reliability and Replication Configurations
 default.replication.factor
-
 Description: Default replication factor for automatically created topics.
 Default: 1
 Example: default.replication.factor=3
+---------------------------
 min.insync.replicas
-
 Description: Minimum number of replicas that must acknowledge a write for it to be considered successful.
 Default: 1
 Example: min.insync.replicas=2
+-----------------------
 unclean.leader.election.enable
-
 Description: Whether to enable unclean leader election, which allows a broker to become a leader even if it has not fully caught up with the leader.
 Default: true
 Example: unclean.leader.election.enable=false
-Security Configurations
+-------------------------
+## Security Configurations
 security.inter.broker.protocol
-
 Description: Security protocol used to communicate between brokers.
 Default: PLAINTEXT
 Example: security.inter.broker.protocol=SSL
+-----------------------
 ssl.keystore.location
-
 Description: Location of the keystore file.
 Default: None
 Example: ssl.keystore.location=/var/private/ssl/keystore.jks
+--------------------
 ssl.keystore.password
-
 Description: Password for the keystore file.
 Default: None
 Example: ssl.keystore.password=yourpassword
+---------------
 ssl.key.password
-
 Description: Password of the private key in the keystore file.
 Default: None
 Example: ssl.key.password=yourpassword
-Miscellaneous Configurations
+-----------------
+## Miscellaneous Configurations
 auto.create.topics.enable
-
 Description: Enable automatic creation of topics.
 Default: true
 Example: auto.create.topics.enable=false
+------------------
 delete.topic.enable
-
 Description: Enable topic deletion. Not recommended in a production environment.
 Default: false
 Example: delete.topic.enable=true
-message.max.bytes
 
+-------------------------
+message.max.bytes
 Description: The maximum size of a message that the broker can receive.
 Default: 1000012 (1 MB)
 Example: message.max.bytes=2000000
